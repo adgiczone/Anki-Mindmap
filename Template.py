@@ -101,8 +101,29 @@ FRONT = """
     show();
   }
 
+  function clicked(t) {
+    if( t.isChanged === false) {
+      t.style.background="white";
+      t.isChanged = true;
+    } else {
+      t.style.color="black";
+      t.style.background="black";
+      t.isChanged = false;
+    }
+  }
+
   function show() {
     document.getElementById("mindmapgraph").style.visibility = "visible";
+
+    document.getElementById("mindmapgraph").addEventListener('click', function(e){
+      const target = e.target.closest(".hide");
+      if(target){
+          if (!target.hasOwnProperty("isChanged")) {
+            target.isChanged = false;
+          }
+        clicked(target);
+      }
+    }, true);
   }
 
   function mindmap(ID) {
@@ -253,5 +274,10 @@ CSS = """
     font-weight: bold;
     color: red;
     overflow: hidden;
+  }
+
+  .hide {
+    color: black;
+    background: black;
   }
 """
