@@ -5,7 +5,7 @@ import os
 import shutil
 from .Template import EDITOR, FRONT, BACK, CSS
 
-MODEL_NAME = "Anki_Mindmap"
+MODEL_NAME = "Anki-Mindmap"
 FIELD_NAME = ["Mindmap", "Notes"]
 
 
