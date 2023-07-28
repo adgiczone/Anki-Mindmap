@@ -1,7 +1,6 @@
 from aqt import mw
-from aqt.utils import showInfo
 from anki.hooks import addHook
-import anki
+
 import os
 import shutil
 from .Template import EDITOR, FRONT, BACK, CSS
@@ -10,13 +9,12 @@ MODEL_NAME = "Anki_Mindmap"
 FIELD_NAME = ["Mindmap", "Notes"]
 
 
-def customize_editor(editor):
+def setup_editor(editor):
     """ This function runs when the user opens the editor, creates the markdown preview area """
     if editor.note.model()["name"] == MODEL_NAME:
         editor.web.eval(EDITOR)
 
-
-addHook("loadNote", customize_editor)
+addHook("loadNote", setup_editor)
 
 
 def create_update_template():

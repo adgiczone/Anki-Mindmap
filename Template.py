@@ -176,11 +176,6 @@ BACK = """
 
 
 CSS = """
-  @font-face {
-    font-family: "Cascadia Code";
-    src: url("_CascadiaCode.ttf");
-  }
-
   .card {
     font: 20px/30px yh;
     background-color: white;
@@ -219,11 +214,10 @@ CSS = """
 
   #mindmapgraph{
     aspect-ratio: 4 / 3;
-    width: 100%;
   }
 
   .markmap-foreign {
-    font: 16px/20px "Cascadia Code", "Consolas", Overpass, "GlowSansSC", "Helvetica Neue",
+    font: 16px/20px "Consolas", Overpass, "GlowSansSC", "Helvetica Neue",
       "pingfang sc", "microsoft yahei", sans-serif;
   }
 
